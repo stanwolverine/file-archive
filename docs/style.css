@@ -1,0 +1,179 @@
+@import url("/assets/normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+    --background-color: #f7f7f7;
+    /* Off-white */
+    --text-color: #1a1a1a;
+    /* Off-black */
+    --primary-color: #6200ee;
+    --secondary-color: #03dac6;
+    --accent-color: #ff4081;
+    --error-color: #b00020;
+    --warning-color: #fbc02d;
+    --info-color: #2196f3;
+    --success-color: #4caf50;
+    --border-color: #dcdcdc;
+    /* Light gray for borders */
+    --dark-border-color: #656565;
+    /* dark gray */
+    --background-light: #ffffff;
+    /* White for elements that need high contrast */
+    --background-dark: #e0e0e0;
+    /* Light gray for more contrast */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        /* Very dark gray */
+        --text-color: #e0e0e0;
+        /* Light gray for text */
+        --primary-color: #bb86fc;
+        --secondary-color: #03dac6;
+        --accent-color: #ff4081;
+        --error-color: #cf6679;
+        --warning-color: #ffd600;
+        --info-color: #2196f3;
+        --success-color: #4caf50;
+        --border-color: #323232;
+        /* Dark gray for borders */
+        --dark-border-color: #a9a9a9;
+        /* dark gray */
+        --background-light: #1e1e1e;
+        /* Slightly lighter dark gray for backgrounds */
+        --background-dark: #000000;
+        /* Pure black for deep contrast */
+    }
+}
+
+html {
+    background-color: var(--background-color);
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: min(90%, 100rem);
+    margin-inline: auto;
+}
+
+/* Header */
+header {
+    padding: 2.4rem 0px 1.2rem 0px;
+}
+
+header > h1 {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 2.4rem;
+    line-height: 3.36rem;
+}
+
+/* Navigation */
+.navigation {
+    font-size: 1.6rem;
+    padding: 1.6rem 0;
+
+    & > .navigation__items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    a {
+        color: var(--dark-border-color);
+        text-decoration: none;
+
+        &.disabled {
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+}
+
+/* Main */
+main {
+    table.files-list {
+        border-spacing: 0px;
+        width: 100%;
+        font-size: 1.6rem;
+
+        thead {
+            th {
+                color: var(--dark-border-color);
+                font-weight: normal;
+                text-align: start;
+                padding: 1.6rem 1rem;
+                border-bottom: 1px solid var(--border-color);
+
+                &.file__size,
+                &.file__date {
+                    text-align: center;
+                }
+            }
+        }
+
+        tbody {
+            td {
+                font-weight: normal;
+                padding: 1.6rem 1rem;
+                border-bottom: 1px solid var(--border-color);
+
+                &.file__name {
+                    padding: 1rem;
+
+                    & > a {
+                        padding: 0.6rem 0px;
+                        text-decoration: none;
+                        color: currentColor;
+
+                        &:visited {
+                            color: currentColor;
+                        }
+
+                        &:active {
+                            filter: brightness(70%);
+                        }
+                    }
+                }
+
+                &.file__size,
+                &.file__date {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/* 404 */
+.not-found {
+    padding: 10rem 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > .not-found__icon {
+        width: 4rem;
+        height: 4rem;
+        fill: white;
+        margin: 2rem 0px;
+    }
+    & > .not-found__title {
+        margin: 1rem 0px;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    & > .not-found__description {
+        color: var(--dark-border-color);
+        margin: 1rem 0px;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}

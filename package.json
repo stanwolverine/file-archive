@@ -1,0 +1,26 @@
+{
+  "name": "files-nagar-io",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "browser-sync start --config bs-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanwolverine/file-archive.git"
+  },
+  "author": "Jatin Nagar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanwolverine/file-archive/issues"
+  },
+  "homepage": "https://github.com/stanwolverine/file-archive#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.2"
+  }
+}
